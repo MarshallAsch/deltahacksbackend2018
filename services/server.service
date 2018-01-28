@@ -1,0 +1,37 @@
+
+#
+# This is a systemd service
+# This gets put in /etc/systemd/system/
+#
+# enable with sudo systemctl enable deltaHacks2018.service
+#
+# This is controlled by using
+# sudo systemctl [start|stop|restart|status] deltaHacks2018.service
+#
+#
+# To view the log use the journalctl command
+#
+# See https://www.axllent.org/docs/view/nodejs-service-with-systemd/ for more info
+#
+
+[Unit]
+Description=Node.js Server for deltaHacks 2018 backend
+Requires=After=mysql.service       # Requires the mysql service to run first
+
+[Service]
+ExecStart=/usr/local/bin/node  /opt/node/deltaHacks/app.js
+# Required on some systems
+WorkingDirectory=/opt/node/deltaHacks/
+Restart=always
+ # Restart service after 10 seconds if node service crashes
+ RestartSec=10
+ # Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=nodejs-deltaHacks2018_backend
+#User=<alternate user>
+#Group=<alternate group>
+#Environment=NODE_ENV=production PORT=1337
+
+[Install]
+WantedBy=multi-user.target
