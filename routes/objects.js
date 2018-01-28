@@ -12,7 +12,7 @@ var mysql = require("mysql");
  * @param   next callback that will cause the next middlewhere function to be executed.
  * @return       none
  */
-router.get("/", validate, function(req, res, next) {
+router.get("/", function(req, res, next) {
 
     res.setHeader('Content-Type', 'application/json');
 
@@ -133,7 +133,7 @@ router.post("/", function(req, res, next) {
  * @param   next callback that will cause the next middlewhere function to be executed.
  * @return       none
  */
-router.patch("/:ID", validate, function(req, res, next) {
+router.patch("/:ID", function(req, res, next) {
 
     res.setHeader('Content-Type', 'application/json');
 
@@ -201,7 +201,7 @@ router.patch("/:ID", validate, function(req, res, next) {
  * @param   next callback that will cause the next middlewhere function to be executed.
  * @return       none
  */
-router.get("/:ID", validate, function(req, res, next) {
+router.get("/:ID", function(req, res, next) {
 
     res.setHeader('Content-Type', 'application/json');
 
@@ -231,7 +231,7 @@ router.get("/:ID", validate, function(req, res, next) {
  * @param   next callback that will cause the next middlewhere function to be executed.
  * @return       none
  */
-router.delete("/:ID", validate, function(req, res, next) {
+router.delete("/:ID", function(req, res, next) {
 
     res.setHeader('Content-Type', 'application/json');
 
