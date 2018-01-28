@@ -117,7 +117,7 @@ router.post("/", function(req, res, next) {
             next(err);
         } else {
             res.status(201);
-            res.send(/*{"status": 201, "error": null, "response": */results});
+            res.send(/*{"status": 201, "error": null, "response": */results);
         }
     });
 
