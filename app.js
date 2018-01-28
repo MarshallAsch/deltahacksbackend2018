@@ -7,10 +7,7 @@ var http = require("http");
 var mysql = require("mysql");
 
 var index = require(__dirname + "/routes/index");
-var users = require(__dirname + "/routes/users");
-var schedules = require(__dirname + "/routes/schedules");
-var supportWorker = require(__dirname + "/routes/supportWorker");
-var observer = require(__dirname + "/routes/observers");
+var objects = require(__dirname + "/routes/objects");
 
 var app = express();
 
@@ -49,7 +46,7 @@ app.use(function(req, res, next){
 
 // define the data route handlers
 app.use("/", index);
-app.use("/v1/objects", users);
+app.use("/v1/objects", objects);
 
 
 
