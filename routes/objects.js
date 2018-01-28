@@ -102,7 +102,7 @@ router.post("/", function(req, res, next) {
     // load the sent data into the struct to put into the database
     var data =
     {
-        ID:             req.body.first_ID,
+        ID:             req.body.ID,
         name:           req.body.name,
         description:    req.body.description
     };
