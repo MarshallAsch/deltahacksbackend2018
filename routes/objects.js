@@ -217,7 +217,7 @@ router.get("/:ID", function(req, res, next) {
             next(err);
         }else {
             res.status(200);
-            res.send(JSON.stringify(/*{"status": 200, "error": null, "response":*/ results[0].description || {}}));
+            res.send(JSON.stringify(/*{"status": 200, "error": null, "response":*/ results[0].description /*|| {}}*/));
         }
     });
 
